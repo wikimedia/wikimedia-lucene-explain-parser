@@ -1,0 +1,28 @@
+2.0901651 Sum of the following:
+  1.1 Dismax (take winner of below)
+    1.1 Constant Scored Query
+    0.001 Constant Scored Query
+  0.9901651 Minimum Of:
+    0.9901651 Sum of the following:
+      0.59999555 product of:
+        0.99999255 {code='pow(doc['incoming_links'].value , 2) / ( pow(doc['incoming_links'].value, 2) + pow(50,2))', options={}, params={}}" and parameters: {}
+        0.6 f( -- constant weight -- ) = 0.6
+      0.3901696 product of:
+        0.97542393 {code='pow(doc['sitelink_count'].value , 2) / ( pow(doc['sitelink_count'].value, 2) + pow(20,2))', options={}, params={}}" and parameters: {}
+        0.4 f( -- constant weight -- ) = 0.4
+    3.4028235E+38 maxBoost
+  0 match on required clause, product of:
+    1 labels_all.prefix:muse, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
+  0 match on required clause, product of:
+    1 content_model:wikibase-item, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
+  0 match on required clause, product of:
+    1 _type:page, product of:
+      1 boost
+      1 queryNorm
+    0 # clause

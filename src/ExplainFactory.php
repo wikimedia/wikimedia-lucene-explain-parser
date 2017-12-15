@@ -3,6 +3,12 @@ namespace LuceneExplain;
 
 class ExplainFactory {
 
+	/**
+	 * Counter for how many explains were created.
+	 * @var int
+	 */
+	private $counter = 0;
+
 	private function meOrOnlyChild( Explain $explain ) {
 		$infl = $explain->influencers();
 		if ( count( $infl ) === 1 ) {
@@ -114,5 +120,9 @@ class ExplainFactory {
 		}
 
 		return new Explain( $explJson, $this );
+	}
+
+	public function getCounter() {
+		return $this->counter++;
 	}
 }

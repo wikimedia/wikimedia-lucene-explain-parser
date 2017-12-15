@@ -10,14 +10,7 @@ class ProductExplain extends Explain
 	}
 
 	public function influencers() {
-		$infl = $this->children;
-		usort( $infl, function ( $a, $b ) {
-			if ( $a->score == $b->score ) {
-				return 0;
-			}
-			return ( $a->score < $b->score ) ? 1 : -1;
-		} );
-		return $infl;
+		return $this->scoreSort( $this->children );
 	}
 
 	public function vectorize() {

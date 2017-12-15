@@ -21,13 +21,7 @@ class SumExplain extends Explain
 				$infl[] = $child;
 			}
 		}
-		usort( $infl, function ( $a, $b ) {
-			if ( $a->score == $b->score ) {
-				return 0;
-			}
-			return ( $a->score < $b->score ) ? 1 : -1;
-		} );
-		return $infl;
+		return $this->scoreSort( $infl );
 	}
 
 	public function vectorize() {

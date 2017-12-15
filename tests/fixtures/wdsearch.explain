@@ -1,0 +1,356 @@
+{
+    "value": 2.0901651,
+    "description": "sum of:",
+    "details": [
+        {
+            "value": 1.1,
+            "description": "product of:",
+            "details": [
+                {
+                    "value": 1.1,
+                    "description": "sum of:",
+                    "details": [
+                        {
+                            "value": 1.1,
+                            "description": "sum of:",
+                            "details": [
+                                {
+                                    "value": 1.1,
+                                    "description": "sum of:",
+                                    "details": [
+                                        {
+                                            "value": 1.1,
+                                            "description": "max of:",
+                                            "details": [
+                                                {
+                                                    "value": 1.1,
+                                                    "description": "ConstantScore(labels.en.prefix:muse), product of:",
+                                                    "details": [
+                                                        {
+                                                            "value": 1.1,
+                                                            "description": "boost",
+                                                            "details": [
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": 1,
+                                                            "description": "queryNorm",
+                                                            "details": [
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": 0.001,
+                                                    "description": "ConstantScore(labels_all.near_match_folded:muse), product of:",
+                                                    "details": [
+                                                        {
+                                                            "value": 0.001,
+                                                            "description": "boost",
+                                                            "details": [
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": 1,
+                                                            "description": "queryNorm",
+                                                            "details": [
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": 0,
+                                            "description": "match on required clause, product of:",
+                                            "details": [
+                                                {
+                                                    "value": 0,
+                                                    "description": "# clause",
+                                                    "details": [
+
+                                                    ]
+                                                },
+                                                {
+                                                    "value": 1,
+                                                    "description": "labels_all.prefix:muse, product of:",
+                                                    "details": [
+                                                        {
+                                                            "value": 1,
+                                                            "description": "boost",
+                                                            "details": [
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": 1,
+                                                            "description": "queryNorm",
+                                                            "details": [
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": 0,
+                                    "description": "match on required clause, product of:",
+                                    "details": [
+                                        {
+                                            "value": 0,
+                                            "description": "# clause",
+                                            "details": [
+
+                                            ]
+                                        },
+                                        {
+                                            "value": 1,
+                                            "description": "content_model:wikibase-item, product of:",
+                                            "details": [
+                                                {
+                                                    "value": 1,
+                                                    "description": "boost",
+                                                    "details": [
+
+                                                    ]
+                                                },
+                                                {
+                                                    "value": 1,
+                                                    "description": "queryNorm",
+                                                    "details": [
+
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": 0,
+                            "description": "match on required clause, product of:",
+                            "details": [
+                                {
+                                    "value": 0,
+                                    "description": "# clause",
+                                    "details": [
+
+                                    ]
+                                },
+                                {
+                                    "value": 1,
+                                    "description": "_type:page, product of:",
+                                    "details": [
+                                        {
+                                            "value": 1,
+                                            "description": "boost",
+                                            "details": [
+
+                                            ]
+                                        },
+                                        {
+                                            "value": 1,
+                                            "description": "queryNorm",
+                                            "details": [
+
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": 1,
+                    "description": "primaryWeight",
+                    "details": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "value": 0.9901651,
+            "description": "product of:",
+            "details": [
+                {
+                    "value": 0.9901651,
+                    "description": "function score, product of:",
+                    "details": [
+                        {
+                            "value": 1,
+                            "description": "*:*, product of:",
+                            "details": [
+                                {
+                                    "value": 1,
+                                    "description": "boost",
+                                    "details": [
+
+                                    ]
+                                },
+                                {
+                                    "value": 1,
+                                    "description": "queryNorm",
+                                    "details": [
+
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": 0.9901651,
+                            "description": "min of:",
+                            "details": [
+                                {
+                                    "value": 0.9901651,
+                                    "description": "function score, score mode [sum]",
+                                    "details": [
+                                        {
+                                            "value": 0.59999555,
+                                            "description": "function score, product of:",
+                                            "details": [
+                                                {
+                                                    "value": 1,
+                                                    "description": "match filter: *:*",
+                                                    "details": [
+
+                                                    ]
+                                                },
+                                                {
+                                                    "value": 0.59999555,
+                                                    "description": "product of:",
+                                                    "details": [
+                                                        {
+                                                            "value": 0.99999255,
+                                                            "description": "script score function, computed with script:\"Script{type=inline, lang='expression', idOrCode='pow(doc['incoming_links'].value , 2) \/ ( pow(doc['incoming_links'].value, 2) + pow(50,2))', options={}, params={}}\" and parameters: \n{}",
+                                                            "details": [
+                                                                {
+                                                                    "value": 1,
+                                                                    "description": "_score: ",
+                                                                    "details": [
+                                                                        {
+                                                                            "value": 1,
+                                                                            "description": "*:*, product of:",
+                                                                            "details": [
+                                                                                {
+                                                                                    "value": 1,
+                                                                                    "description": "boost",
+                                                                                    "details": [
+
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "value": 1,
+                                                                                    "description": "queryNorm",
+                                                                                    "details": [
+
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": 0.6,
+                                                            "description": "weight",
+                                                            "details": [
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": 0.3901696,
+                                            "description": "function score, product of:",
+                                            "details": [
+                                                {
+                                                    "value": 1,
+                                                    "description": "match filter: *:*",
+                                                    "details": [
+
+                                                    ]
+                                                },
+                                                {
+                                                    "value": 0.3901696,
+                                                    "description": "product of:",
+                                                    "details": [
+                                                        {
+                                                            "value": 0.97542393,
+                                                            "description": "script score function, computed with script:\"Script{type=inline, lang='expression', idOrCode='pow(doc['sitelink_count'].value , 2) \/ ( pow(doc['sitelink_count'].value, 2) + pow(20,2))', options={}, params={}}\" and parameters: \n{}",
+                                                            "details": [
+                                                                {
+                                                                    "value": 1,
+                                                                    "description": "_score: ",
+                                                                    "details": [
+                                                                        {
+                                                                            "value": 1,
+                                                                            "description": "*:*, product of:",
+                                                                            "details": [
+                                                                                {
+                                                                                    "value": 1,
+                                                                                    "description": "boost",
+                                                                                    "details": [
+
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "value": 1,
+                                                                                    "description": "queryNorm",
+                                                                                    "details": [
+
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": 0.4,
+                                                            "description": "weight",
+                                                            "details": [
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": 3.4028235e+38,
+                                    "description": "maxBoost",
+                                    "details": [
+
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": 1,
+                    "description": "secondaryWeight",
+                    "details": [
+
+                    ]
+                }
+            ]
+        }
+    ]
+}

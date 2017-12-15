@@ -29,6 +29,11 @@ class Explain
 	 * @var Explain[]
 	 */
 	protected $children = [];
+	/**
+	 * JSON order of the clause.
+	 * @var int
+	 */
+	private $order;
 
 	/**
 	 * @param array $explJson JSON data
@@ -38,6 +43,7 @@ class Explain
 		$this->asJson = $explJson;
 		$this->realContribution = $this->score = (float)$explJson['value'];
 		$this->realExplanation = $this->description = $explJson['description'];
+		$this->order = $explFactory->getCounter();
 
 		if ( isset( $explJson['details'] ) ) {
 			foreach ( $explJson['details'] as $detail ) {
@@ -121,6 +127,22 @@ class Explain
 			$this->asRawStr = json_encode( $this->asJson );
 		}
 		return $this->asRawStr;
+	}
+
+	/**
+	 * Sort explans by score and then by original order
+	 * @param Explain[] $sorted
+	 * @param int $direction 1 for ascending, -1 for descending
+	 * @return mixed
+	 */
+	protected function scoreSort( $sorted, $direction = -1 ) {
+		usort( $sorted, function ( Explain $a, Explain $b ) use( $direction ) {
+			if ( $a->score == $b->score ) {
+				return $a->order - $b->order;
+			}
+			return ( $a->score < $b->score ) ? -$direction : $direction;
+		} );
+		return $sorted;
 	}
 
 }
