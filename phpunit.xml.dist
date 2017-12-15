@@ -1,0 +1,10 @@
+<phpunit colors="true"
+        beStrictAboutTestsThatDoNotTestAnything="true"
+        beStrictAboutOutputDuringTests="true">
+        <testsuites>
+                <testsuite name="LuceneExplainer Tests">
+                        <directory>./test</directory>
+                </testsuite>
+        </testsuites>
+</phpunit>
+
