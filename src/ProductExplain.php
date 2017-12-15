@@ -29,7 +29,7 @@ class ProductExplain extends Explain
 		for ( $factorInfl = 0; $factorInfl < $numInfl; $factorInfl++ ) {
 			for ( $currMult = 0; $currMult < $numInfl; $currMult++ ) {
 				if ( $currMult !== $factorInfl ) {
-					$inflFactors[$factorInfl] = $inflFactors[$factorInfl] * $infl[$currMult]->contribution();
+					$inflFactors[$factorInfl] *= $infl[$currMult]->contribution();
 				}
 			}
 		}

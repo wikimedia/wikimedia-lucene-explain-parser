@@ -33,6 +33,11 @@ class ExplainFactory {
 		return substr( $string, -strlen( $endsWith ) ) === $endsWith;
 	}
 
+	/**
+	 * Create new Explain from JSON data.
+	 * @param array $explJson
+	 * @return Explain
+	 */
 	public function createExplain( array $explJson ) {
 		$description = $explJson['description'];
 		$details = [];

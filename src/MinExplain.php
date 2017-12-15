@@ -25,4 +25,5 @@ class MinExplain extends Explain
 		$minInfl = $infl[0];
 		return $minInfl->vectorize();
 	}
+
 }

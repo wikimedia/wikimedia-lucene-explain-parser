@@ -5,13 +5,35 @@ namespace LuceneExplain;
 class Explain
 {
 
+	/**
+	 * @var array
+	 */
 	protected $asJson;
+	/**
+	 * @var float
+	 */
 	protected $realContribution;
+	/**
+	 * @var float
+	 */
 	protected $score;
+	/**
+	 * @var string
+	 */
 	protected $realExplanation;
+	/**
+	 * @var string
+	 */
 	protected $description;
+	/**
+	 * @var Explain[]
+	 */
 	protected $children = [];
 
+	/**
+	 * @param array $explJson JSON data
+	 * @param ExplainFactory $explFactory
+	 */
 	public function __construct( $explJson, ExplainFactory $explFactory ) {
 		$this->asJson = $explJson;
 		$this->realContribution = $this->score = (float)$explJson['value'];
@@ -27,6 +49,9 @@ class Explain
 		}
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		return [];
 	}
@@ -43,12 +68,18 @@ class Explain
 		return false;
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$rval = VectorService::create();
 		$rval->set( $this->explanation(), $this->contribution() );
 		return $rval;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function matchDetails() {
 		$rval = [];
 		foreach ( $this->children as $child ) {
@@ -57,7 +88,13 @@ class Explain
 		return $rval;
 	}
 
+	/**
+	 * @var string
+	 */
 	private $asStr;
+	/**
+	 * @var string
+	 */
 	private $asRawStr;
 
 	public function __toString() {

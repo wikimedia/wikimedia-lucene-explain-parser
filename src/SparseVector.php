@@ -5,6 +5,9 @@ class SparseVector
 {
 
 	private $vec = [];
+	/**
+	 * @var string
+	 */
 	private $asStr;
 
 	private function setDirty() {
@@ -20,6 +23,9 @@ class SparseVector
 		return isset( $this->vec[$key] ) ? $this->vec[$key] : null;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function __toString() {
 		if ( $this->asStr === null ) {
 			$sorted = $this->vec;

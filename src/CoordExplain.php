@@ -1,16 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: smalyshev
- * Date: 12/15/17
- * Time: 11:16 AM
- */
-
 namespace LuceneExplain;
-
-use CirrusSearch\Explain;
-use CirrusSearch\ExplainFactory;
-use LuceneExplain\VectorService;
 
 class CoordExplain extends Explain
 {

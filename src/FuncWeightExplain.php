@@ -6,4 +6,6 @@ class FuncWeightExplain extends Explain {
 		parent::__construct( $explJson, $explFactory );
 		$this->realExplanation = 'f( -- constant weight -- ) = ' . $explJson['value'];
 	}
+
 }
+

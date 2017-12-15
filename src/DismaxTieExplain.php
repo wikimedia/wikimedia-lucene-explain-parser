@@ -1,16 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: smalyshev
- * Date: 12/15/17
- * Time: 11:16 AM
- */
-
 namespace LuceneExplain;
-
-use CirrusSearch\Explain;
-use CirrusSearch\ExplainFactory;
-use LuceneExplain\VectorService;
 
 class DismaxTieExplain extends Explain
 {
@@ -24,6 +13,9 @@ class DismaxTieExplain extends Explain
 		$this->tie = $tie;
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		$infl = $this->children;
 		usort( $infl, function ( $a, $b ) {

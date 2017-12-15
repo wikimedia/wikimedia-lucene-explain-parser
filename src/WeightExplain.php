@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: smalyshev
- * Date: 12/15/17
- * Time: 11:13 AM
- */
-
 namespace LuceneExplain;
 
 class WeightExplain extends Explain {
