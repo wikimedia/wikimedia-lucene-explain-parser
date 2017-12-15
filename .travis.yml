@@ -2,4 +2,4 @@ language: php
 php:
   - 5.6
   - hhvm
-script: composer update && phpunit tests
+script: composer update && composer test

@@ -27,9 +27,9 @@
     },
     "scripts": {
         "test": [
-            "parallel-lint . --exclude vendor",
-            "phpunit tests/",
-            "phpcs -p -s"
+            "vendor/bin/parallel-lint . --exclude vendor",
+            "vendor/bin/phpunit tests/",
+            "vendor/bin/phpcs -p -s"
         ]
     }
 }
