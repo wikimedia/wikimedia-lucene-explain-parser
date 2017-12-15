@@ -2,7 +2,7 @@ PHP Classes for parsing and pretty-printing Lucene explain structures.
 
 Makes the data (more) human-readable.
 
-This is all based off of github.com/o19s/splainer-search, which does
+This is all based off of https://github.com/o19s/splainer-search, which does
 much nicer prints of lucene explains for splainer.io.
 
 Usage:
