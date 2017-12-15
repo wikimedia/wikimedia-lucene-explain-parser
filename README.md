@@ -6,9 +6,10 @@ This is all based off of github.com/o19s/splainer-search, which does
 much nicer prints of lucene explains for splainer.io.
 
 Usage:
-   $factory = new ExplainFactory();
-   $explain = $factory->createExplain( $jsonFromLucene ); 
-   $prettyResult = (string)$explain; 
+
+    $factory = new ExplainFactory();
+    $explain = $factory->createExplain( $jsonFromLucene ); 
+    $prettyResult = (string)$explain; 
 
 [![Build Status](https://travis-ci.org/smalyshev/splainer.svg?branch=master)](https://travis-ci.org/smalyshev/splainer)
 
