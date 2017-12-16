@@ -1,0 +1,32 @@
+3.451867 Sum of the following:
+  0.91869634 Dismax (max plus: 0.2 times others)
+    0.91869634 labels.en.plain:instance
+  0.8110768 all.plain:instance
+  0.78932667 all:instance
+  0.78 Dismax (take winner of below)
+    0.78 Constant Scored Query
+    0.01 Constant Scored Query
+  0.15276718 Minimum Of:
+    0.15276718 Sum of the following:
+      0.118804924 product of:
+        0.4 f( -- constant weight -- ) = 0.4
+        0.2970123 {code='pow(doc['sitelink_count'].value , 2) / ( pow(doc['sitelink_count'].value, 2) + pow(20,2))', options={}, params={}}" and parameters: {}
+      0.033962265 product of:
+        0.6 f( -- constant weight -- ) = 0.6
+        0.056603774 {code='pow(doc['incoming_links'].value , 1) / ( pow(doc['incoming_links'].value, 1) + pow(100,1))', options={}, params={}}" and parameters: {}
+    3.4028235E+38 maxBoost
+  0 match on required clause, product of:
+    1 (all:instance all.plain:instance descriptions.en:instance)~1, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
+  0 match on required clause, product of:
+    1 namespace:{0 120}, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
+  0 match on required clause, product of:
+    1 _type:page, product of:
+      1 boost
+      1 queryNorm
+    0 # clause

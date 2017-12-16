@@ -1,0 +1,508 @@
+{
+  "value": 3.451867,
+  "description": "sum of:",
+  "details": [
+    {
+      "value": 3.2991,
+      "description": "product of:",
+      "details": [
+        {
+          "value": 3.2991,
+          "description": "sum of:",
+          "details": [
+            {
+              "value": 3.2991,
+              "description": "sum of:",
+              "details": [
+                {
+                  "value": 3.2991,
+                  "description": "sum of:",
+                  "details": [
+                    {
+                      "value": 0.78,
+                      "description": "max of:",
+                      "details": [
+                        {
+                          "value": 0.78,
+                          "description": "ConstantScore(labels.en.near_match:instance), product of:",
+                          "details": [
+                            {
+                              "value": 0.78,
+                              "description": "boost",
+                              "details": []
+                            },
+                            {
+                              "value": 1,
+                              "description": "queryNorm",
+                              "details": []
+                            }
+                          ]
+                        },
+                        {
+                          "value": 0.01,
+                          "description": "ConstantScore(labels.en.near_match_folded:instance), product of:",
+                          "details": [
+                            {
+                              "value": 0.01,
+                              "description": "boost",
+                              "details": []
+                            },
+                            {
+                              "value": 1,
+                              "description": "queryNorm",
+                              "details": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "value": 2.5191,
+                      "description": "sum of:",
+                      "details": [
+                        {
+                          "value": 0.78932667,
+                          "description": "weight(all:instance in 7711) [PerFieldSimilarity], result of:",
+                          "details": [
+                            {
+                              "value": 0.78932667,
+                              "description": "score(doc=7711,freq=7.0 = termFreq=7.0\n), product of:",
+                              "details": [
+                                {
+                                  "value": 0.04,
+                                  "description": "boost",
+                                  "details": []
+                                },
+                                {
+                                  "value": 10.862555,
+                                  "description": "idf, computed as log(1 + (docCount - docFreq + 0.5) / (docFreq + 0.5)) from:",
+                                  "details": [
+                                    {
+                                      "value": 108,
+                                      "description": "docFreq",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 5662097,
+                                      "description": "docCount",
+                                      "details": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "value": 1.816623,
+                                  "description": "tfNorm, computed as (freq * (k1 + 1)) / (freq + k1 * (1 - b + b * fieldLength / avgFieldLength)) from:",
+                                  "details": [
+                                    {
+                                      "value": 7,
+                                      "description": "termFreq=7.0",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 1.2,
+                                      "description": "parameter k1",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 0.3,
+                                      "description": "parameter b",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 144.61737,
+                                      "description": "avgFieldLength",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 256,
+                                      "description": "fieldLength",
+                                      "details": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "value": 0.8110768,
+                          "description": "weight(all.plain:instance in 7711) [PerFieldSimilarity], result of:",
+                          "details": [
+                            {
+                              "value": 0.8110768,
+                              "description": "score(doc=7711,freq=7.0 = termFreq=7.0\n), product of:",
+                              "details": [
+                                {
+                                  "value": 0.04,
+                                  "description": "boost",
+                                  "details": []
+                                },
+                                {
+                                  "value": 11.186207,
+                                  "description": "idf, computed as log(1 + (docCount - docFreq + 0.5) / (docFreq + 0.5)) from:",
+                                  "details": [
+                                    {
+                                      "value": 78,
+                                      "description": "docFreq",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 5662097,
+                                      "description": "docCount",
+                                      "details": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "value": 1.8126718,
+                                  "description": "tfNorm, computed as (freq * (k1 + 1)) / (freq + k1 * (1 - b + b * fieldLength / avgFieldLength)) from:",
+                                  "details": [
+                                    {
+                                      "value": 7,
+                                      "description": "termFreq=7.0",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 1.2,
+                                      "description": "parameter k1",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 0.3,
+                                      "description": "parameter b",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 140.54202,
+                                      "description": "avgFieldLength",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 256,
+                                      "description": "fieldLength",
+                                      "details": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "value": 0.91869634,
+                          "description": "max plus 0.2 times others of:",
+                          "details": [
+                            {
+                              "value": 0.91869634,
+                              "description": "weight(labels.en.plain:instance in 7711) [PerFieldSimilarity], result of:",
+                              "details": [
+                                {
+                                  "value": 0.91869634,
+                                  "description": "score(doc=7711,freq=1.0 = termFreq=1.0\n), product of:",
+                                  "details": [
+                                    {
+                                      "value": 0.07,
+                                      "description": "boost",
+                                      "details": []
+                                    },
+                                    {
+                                      "value": 11.746689,
+                                      "description": "idf, computed as log(1 + (docCount - docFreq + 0.5) / (docFreq + 0.5)) from:",
+                                      "details": [
+                                        {
+                                          "value": 31,
+                                          "description": "docFreq",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 3979538,
+                                          "description": "docCount",
+                                          "details": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "value": 1.1172708,
+                                      "description": "tfNorm, computed as (freq * (k1 + 1)) / (freq + k1 * (1 - b + b * fieldLength / avgFieldLength)) from:",
+                                      "details": [
+                                        {
+                                          "value": 1,
+                                          "description": "termFreq=1.0",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 1.2,
+                                          "description": "parameter k1",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 0.3,
+                                          "description": "parameter b",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 7.139534,
+                                          "description": "avgFieldLength",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 2.56,
+                                          "description": "fieldLength",
+                                          "details": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "value": 0,
+                      "description": "match on required clause, product of:",
+                      "details": [
+                        {
+                          "value": 0,
+                          "description": "# clause",
+                          "details": []
+                        },
+                        {
+                          "value": 1,
+                          "description": "(all:instance all.plain:instance descriptions.en:instance)~1, product of:",
+                          "details": [
+                            {
+                              "value": 1,
+                              "description": "boost",
+                              "details": []
+                            },
+                            {
+                              "value": 1,
+                              "description": "queryNorm",
+                              "details": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": 0,
+                  "description": "match on required clause, product of:",
+                  "details": [
+                    {
+                      "value": 0,
+                      "description": "# clause",
+                      "details": []
+                    },
+                    {
+                      "value": 1,
+                      "description": "namespace:{0 120}, product of:",
+                      "details": [
+                        {
+                          "value": 1,
+                          "description": "boost",
+                          "details": []
+                        },
+                        {
+                          "value": 1,
+                          "description": "queryNorm",
+                          "details": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": 0,
+              "description": "match on required clause, product of:",
+              "details": [
+                {
+                  "value": 0,
+                  "description": "# clause",
+                  "details": []
+                },
+                {
+                  "value": 1,
+                  "description": "_type:page, product of:",
+                  "details": [
+                    {
+                      "value": 1,
+                      "description": "boost",
+                      "details": []
+                    },
+                    {
+                      "value": 1,
+                      "description": "queryNorm",
+                      "details": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "primaryWeight",
+          "details": []
+        }
+      ]
+    },
+    {
+      "value": 0.15276718,
+      "description": "product of:",
+      "details": [
+        {
+          "value": 0.15276718,
+          "description": "function score, product of:",
+          "details": [
+            {
+              "value": 1,
+              "description": "*:*, product of:",
+              "details": [
+                {
+                  "value": 1,
+                  "description": "boost",
+                  "details": []
+                },
+                {
+                  "value": 1,
+                  "description": "queryNorm",
+                  "details": []
+                }
+              ]
+            },
+            {
+              "value": 0.15276718,
+              "description": "min of:",
+              "details": [
+                {
+                  "value": 0.15276718,
+                  "description": "function score, score mode [sum]",
+                  "details": [
+                    {
+                      "value": 0.033962265,
+                      "description": "function score, product of:",
+                      "details": [
+                        {
+                          "value": 1,
+                          "description": "match filter: *:*",
+                          "details": []
+                        },
+                        {
+                          "value": 0.033962265,
+                          "description": "product of:",
+                          "details": [
+                            {
+                              "value": 0.056603774,
+                              "description": "script score function, computed with script:\"Script{type=inline, lang='expression', idOrCode='pow(doc['incoming_links'].value , 1) / ( pow(doc['incoming_links'].value, 1) + pow(100,1))', options={}, params={}}\" and parameters: \n{}",
+                              "details": [
+                                {
+                                  "value": 1,
+                                  "description": "_score: ",
+                                  "details": [
+                                    {
+                                      "value": 1,
+                                      "description": "*:*, product of:",
+                                      "details": [
+                                        {
+                                          "value": 1,
+                                          "description": "boost",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 1,
+                                          "description": "queryNorm",
+                                          "details": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "value": 0.6,
+                              "description": "weight",
+                              "details": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "value": 0.118804924,
+                      "description": "function score, product of:",
+                      "details": [
+                        {
+                          "value": 1,
+                          "description": "match filter: *:*",
+                          "details": []
+                        },
+                        {
+                          "value": 0.118804924,
+                          "description": "product of:",
+                          "details": [
+                            {
+                              "value": 0.2970123,
+                              "description": "script score function, computed with script:\"Script{type=inline, lang='expression', idOrCode='pow(doc['sitelink_count'].value , 2) / ( pow(doc['sitelink_count'].value, 2) + pow(20,2))', options={}, params={}}\" and parameters: \n{}",
+                              "details": [
+                                {
+                                  "value": 1,
+                                  "description": "_score: ",
+                                  "details": [
+                                    {
+                                      "value": 1,
+                                      "description": "*:*, product of:",
+                                      "details": [
+                                        {
+                                          "value": 1,
+                                          "description": "boost",
+                                          "details": []
+                                        },
+                                        {
+                                          "value": 1,
+                                          "description": "queryNorm",
+                                          "details": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "value": 0.4,
+                              "description": "weight",
+                              "details": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": 3.4028235e+38,
+                  "description": "maxBoost",
+                  "details": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "secondaryWeight",
+          "details": []
+        }
+      ]
+    }
+  ]
+}

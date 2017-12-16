@@ -1,0 +1,27 @@
+20.424051 Sum of the following:
+  11.054539 Minimum Of:
+    11.054539 Sum of the following:
+      9.724485 product of:
+        10 f( -- constant weight -- ) = 10
+        0.9724485 {code='pow(doc['incoming_links'].value , 0.7) / ( pow(doc['incoming_links'].value, 0.7) + pow(30,0.7))', options={}, params={}}" and parameters: {}
+      1.3300536 product of:
+        3 f( -- constant weight -- ) = 3
+        0.44335118 {code='pow(doc['popularity_score'].value , 0.8) / ( pow(doc['popularity_score'].value, 0.8) + pow(8.0E-6,0.8))', options={}, params={}}" and parameters: {}
+    3.4028235E+38 maxBoost
+  5.19099 Dismax (take winner of below)
+    5.19099 all.plain:science
+    2.423089 all:science
+  3.1785228 Dismax (take winner of below)
+    3.1785228 all.plain:life
+    1.5964217 all:life
+  1 *:*
+  0 match on required clause, product of:
+    1 namespace:{0}, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
+  0 match on required clause, product of:
+    1 _type:page, product of:
+      1 boost
+      1 queryNorm
+    0 # clause
