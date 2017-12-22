@@ -3,7 +3,7 @@
     "description": "Parsing and pretty-printing Lucene explain data",
     "type": "library",
     "license": "Apache 2.0",
-    "require": { "php": ">=5.5.0" },
+    "require": { "php": ">=5.5.9" },
     "autoload": {
         "psr-4": {
             "LuceneExplain\\": "src/"
@@ -27,9 +27,12 @@
     },
     "scripts": {
         "test": [
-            "vendor/bin/parallel-lint . --exclude vendor",
-            "vendor/bin/phpunit tests/",
-            "vendor/bin/phpcs -p -s"
-        ]
+            "parallel-lint . --exclude vendor",
+            "phpunit tests/",
+            "phpcs -p -s"
+        ],
+		"fix": [
+			"phpcbf"
+		]
     }
 }
