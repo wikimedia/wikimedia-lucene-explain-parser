@@ -2,7 +2,7 @@
     "name": "wikimedia/lucene-explain-parser",
     "description": "Parsing and pretty-printing Lucene explain data",
     "type": "library",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "require": { "php": ">=5.5.9" },
     "autoload": {
         "psr-4": {
