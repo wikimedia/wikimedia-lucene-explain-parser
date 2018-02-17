@@ -1,8 +1,7 @@
 <?php
 namespace LuceneExplain;
 
-class SparseVector
-{
+class SparseVector {
 
 	private $vec = [];
 	/**

@@ -2,8 +2,7 @@
 
 namespace LuceneExplain;
 
-class Explain
-{
+class Explain {
 
 	/**
 	 * @var array
