@@ -1,41 +1,43 @@
 {
-    "name": "wikimedia/lucene-explain-parser",
-    "description": "Parsing and pretty-printing Lucene explain data",
-    "type": "library",
-    "license": "Apache-2.0",
-    "require": { "php": ">=5.5.9" },
-    "autoload": {
-        "psr-4": {
-            "LuceneExplain\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Erik Bernhardson",
-            "email": "ebernhardson@wikimedia.org"
-        },
-        {
-            "name": "Stanislav Malyshev",
-            "email": "smalyshev@wikimedia.org"
-        }
-    ],
-    "require-dev": {
-        "jakub-onderka/php-parallel-lint": "0.9.2",
-        "jakub-onderka/php-console-highlighter": "0.3.2",
-        "mediawiki/mediawiki-codesniffer": "16.0.0",
-        "mediawiki/minus-x": "0.3.1",
-        "phpunit/phpunit": "4.8.36"
-    },
-    "scripts": {
-        "test": [
-            "parallel-lint . --exclude vendor",
-            "phpunit tests/",
-            "phpcs -p -s",
-            "minus-x check ."
-        ],
+	"name": "wikimedia/lucene-explain-parser",
+	"description": "Parsing and pretty-printing Lucene explain data",
+	"type": "library",
+	"license": "Apache-2.0",
+	"require": {
+		"php": ">=5.5.9"
+	},
+	"autoload": {
+		"psr-4": {
+			"LuceneExplain\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Erik Bernhardson",
+			"email": "ebernhardson@wikimedia.org"
+		},
+		{
+			"name": "Stanislav Malyshev",
+			"email": "smalyshev@wikimedia.org"
+		}
+	],
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9.2",
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"mediawiki/mediawiki-codesniffer": "16.0.1",
+		"mediawiki/minus-x": "0.3.1",
+		"phpunit/phpunit": "4.8.36"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpunit tests/",
+			"phpcs -p -s",
+			"minus-x check ."
+		],
 		"fix": [
 			"minus-x fix .",
 			"phpcbf"
 		]
-    }
+	}
 }
