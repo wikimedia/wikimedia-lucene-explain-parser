@@ -1,12 +1,10 @@
 <?php
 
 namespace LuceneExplain;
+
 require __DIR__.'/../vendor/autoload.php';
 
-use PHPUnit_Framework_TestCase;
-
-class ExplainPrinterTest extends PHPUnit_Framework_TestCase
-{
+class ExplainPrinterTest extends \PHPUnit\Framework\TestCase {
 
 	public function formatProvider() {
 		$tests = [];
@@ -19,7 +17,7 @@ class ExplainPrinterTest extends PHPUnit_Framework_TestCase
 				$this->fail( "Failed parsing $explainFile: " . json_last_error() );
 			}
 
-			$tests[$testName] = [$testBase, $explain];
+			$tests[$testName] = [ $testBase, $explain ];
 		}
 
 		return $tests;
