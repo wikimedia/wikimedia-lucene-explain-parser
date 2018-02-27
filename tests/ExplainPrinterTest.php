@@ -2,8 +2,6 @@
 
 namespace LuceneExplain;
 
-require __DIR__.'/../vendor/autoload.php';
-
 class ExplainPrinterTest extends \PHPUnit\Framework\TestCase {
 
 	public function formatProvider() {
