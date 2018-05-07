@@ -1,10 +1,14 @@
 <phpunit colors="true"
-        beStrictAboutTestsThatDoNotTestAnything="true"
-        beStrictAboutOutputDuringTests="true">
-        <testsuites>
-                <testsuite name="LuceneExplainer Tests">
-                        <directory>./test</directory>
-                </testsuite>
-        </testsuites>
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	beStrictAboutOutputDuringTests="true">
+	<testsuites>
+		<testsuite name="lucene-explain-parser Tests">
+			<directory>./tests</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">./src</directory>
+		</whitelist>
+	</filter>
 </phpunit>
-

@@ -3,4 +3,3 @@ host=gerrit.wikimedia.org
 port=29418
 project=wikimedia/lucene-explain-parser.git
 track=1
-defaultrebase=0
