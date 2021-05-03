@@ -135,7 +135,7 @@ class Explain {
 	 * @return mixed
 	 */
 	protected function scoreSort( $sorted, $direction = -1 ) {
-		usort( $sorted, function ( Explain $a, Explain $b ) use( $direction ) {
+		usort( $sorted, static function ( Explain $a, Explain $b ) use( $direction ) {
 			if ( $a->score == $b->score ) {
 				return $a->order - $b->order;
 			}
