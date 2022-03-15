@@ -4,8 +4,9 @@ namespace LuceneExplain;
 class SparseVector {
 
 	private $vec = [];
+
 	/**
-	 * @var string
+	 * @var string|null
 	 */
 	private $asStr;
 
@@ -19,7 +20,7 @@ class SparseVector {
 	}
 
 	public function get( $key ) {
-		return isset( $this->vec[$key] ) ? $this->vec[$key] : null;
+		return $this->vec[$key] ?? null;
 	}
 
 	/**
