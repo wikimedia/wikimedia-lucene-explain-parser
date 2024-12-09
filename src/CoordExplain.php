@@ -7,6 +7,11 @@ class CoordExplain extends Explain {
 	/** @var float */
 	private $coordFactor;
 
+	/**
+	 * @param array $explJson
+	 * @param ExplainFactory $explFactory
+	 * @param float $coordFactor
+	 */
 	public function __construct( array $explJson, ExplainFactory $explFactory, $coordFactor ) {
 		parent::__construct( $explJson, $explFactory );
 		$this->coordFactor = $coordFactor;
@@ -15,6 +20,9 @@ class CoordExplain extends Explain {
 		}
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		if ( $this->coordFactor >= 1.0 ) {
 			return parent::influencers();

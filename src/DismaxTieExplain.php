@@ -7,6 +7,11 @@ class DismaxTieExplain extends Explain {
 	/** @var float */
 	private $tie;
 
+	/**
+	 * @param array $explJson
+	 * @param ExplainFactory $explFactory
+	 * @param float $tie
+	 */
 	public function __construct( array $explJson, ExplainFactory $explFactory, $tie ) {
 		parent::__construct( $explJson, $explFactory );
 		$this->realExplanation = "Dismax (max plus: $tie times others)";

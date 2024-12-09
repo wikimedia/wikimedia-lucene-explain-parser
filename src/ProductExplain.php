@@ -9,6 +9,9 @@ class ProductExplain extends Explain {
 		$this->simplify();
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		return $this->scoreSort( $this->children );
 	}

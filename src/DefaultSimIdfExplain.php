@@ -4,6 +4,7 @@ namespace LuceneExplain;
 
 class DefaultSimIdfExplain extends Explain {
 
+	/** @var Explain[] */
 	private $influencers = [];
 
 	public function __construct( array $explJson, ExplainFactory $explFactory ) {
@@ -17,6 +18,9 @@ class DefaultSimIdfExplain extends Explain {
 		}
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		return $this->influencers;
 	}

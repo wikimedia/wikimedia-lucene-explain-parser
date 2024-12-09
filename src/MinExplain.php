@@ -9,6 +9,9 @@ class MinExplain extends Explain {
 		$this->realExplanation = 'Minimum Of:';
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		return $this->scoreSort( $this->children, 1 );
 	}

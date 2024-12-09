@@ -20,6 +20,9 @@ class WeightExplain extends Explain {
 		return true;
 	}
 
+	/**
+	 * @return null
+	 */
 	public function getMatch() {
 		/*
 		if ( str_contains( $this->description, 'DefaultSimilarity' ) ) {

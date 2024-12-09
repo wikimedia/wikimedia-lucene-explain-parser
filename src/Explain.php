@@ -132,10 +132,10 @@ class Explain {
 	 * Sort explans by score and then by original order
 	 * @param Explain[] $sorted
 	 * @param int $direction 1 for ascending, -1 for descending
-	 * @return mixed
+	 * @return Explain[]
 	 */
 	protected function scoreSort( $sorted, $direction = -1 ) {
-		usort( $sorted, static function ( Explain $a, Explain $b ) use( $direction ) {
+		usort( $sorted, static function ( Explain $a, Explain $b ) use ( $direction ) {
 			if ( $a->score == $b->score ) {
 				return $a->order - $b->order;
 			}

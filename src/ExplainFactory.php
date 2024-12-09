@@ -10,6 +10,10 @@ class ExplainFactory {
 	 */
 	private $counter = 0;
 
+	/**
+	 * @param Explain $explain
+	 * @return Explain
+	 */
 	private function meOrOnlyChild( Explain $explain ) {
 		$infl = $explain->influencers();
 		if ( count( $infl ) === 1 ) {
@@ -36,13 +40,16 @@ class ExplainFactory {
 		if ( str_starts_with( $description, 'score(' ) ) {
 			return new ScoreExplain( $explJson, $this );
 		} elseif ( str_starts_with( $description, 'tf(' ) ) {
-			return null; // new DefaultSimTfExplain( $explJson, $this );
+			// new DefaultSimTfExplain( $explJson, $this );
+			return null;
 		} elseif ( str_starts_with( $description, 'idf(' ) ) {
 			return new DefaultSimIdfExplain( $explJson, $this );
 		} elseif ( str_starts_with( $description, 'fieldWeight' ) ) {
-			return null; // new FieldWeightExplain( $explJson, $this );
+			// new FieldWeightExplain( $explJson, $this );
+			return null;
 		} elseif ( str_starts_with( $description, 'queryWeight' ) ) {
-			return null; // new QueryWeightExplain( $explJson, $this );
+			// new QueryWeightExplain( $explJson, $this );
+			return null;
 		} elseif ( str_starts_with( $description, 'ConstantScore' ) ) {
 			return new ConstantScoreExplain( $explJson, $this );
 		} elseif ( str_starts_with( $description, 'MatchAllDocsQuery' ) ) {
@@ -101,6 +108,9 @@ class ExplainFactory {
 		return new Explain( $explJson, $this );
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getCounter() {
 		return $this->counter++;
 	}

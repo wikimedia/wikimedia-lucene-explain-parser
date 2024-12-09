@@ -2,6 +2,20 @@
 
 namespace LuceneExplain;
 
+/**
+ * @covers \LuceneExplain\ConstantScoreExplain
+ * @covers \LuceneExplain\DismaxExplain
+ * @covers \LuceneExplain\DismaxTieExplain
+ * @covers \LuceneExplain\Explain
+ * @covers \LuceneExplain\ExplainFactory
+ * @covers \LuceneExplain\FunctionQueryExplain
+ * @covers \LuceneExplain\MinExplain
+ * @covers \LuceneExplain\ProductExplain
+ * @covers \LuceneExplain\ScoreExplain
+ * @covers \LuceneExplain\ScriptScoreFunctionExplain
+ * @covers \LuceneExplain\SumExplain
+ * @covers \LuceneExplain\WeightExplain
+ */
 class ExplainPrinterTest extends \PHPUnit\Framework\TestCase {
 
 	public function formatProvider() {

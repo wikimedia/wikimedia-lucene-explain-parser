@@ -9,6 +9,9 @@ class SumExplain extends Explain {
 		$this->realExplanation = 'Sum of the following:';
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		$infl = [];
 		foreach ( $this->children as $child ) {

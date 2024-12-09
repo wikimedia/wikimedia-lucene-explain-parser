@@ -9,6 +9,9 @@ class DismaxExplain extends Explain {
 		$this->realExplanation = 'Dismax (take winner of below)';
 	}
 
+	/**
+	 * @return Explain[]
+	 */
 	public function influencers() {
 		return $this->scoreSort( $this->children );
 	}
