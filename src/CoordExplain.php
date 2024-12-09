@@ -36,7 +36,6 @@ class CoordExplain extends Explain {
 		foreach ( $this->influencers() as $infl ) {
 			$rval = VectorService::add( $rval, $infl->vectorize() );
 		}
-		$rval = VectorService::scale( $rval, $this->coordFactor );
-		return $rval;
+		return VectorService::scale( $rval, $this->coordFactor );
 	}
 }

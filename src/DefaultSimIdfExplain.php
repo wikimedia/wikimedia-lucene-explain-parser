@@ -12,7 +12,7 @@ class DefaultSimIdfExplain extends Explain {
 		if ( count( $this->children ) > 1 && str_contains( $desc, 'sum of:' ) ) {
 			$this->realExplanation = 'IDF Score';
 			$this->influencers = $this->children;
-		} elseif ( preg_match( '/idf\(docFreq=(\d+),.*maxDocs=(\d+)\)/', $desc, $matches ) ) {
+		} elseif ( preg_match( '/idf\(docFreq=(\d+),.*maxDocs=(\d+)\)/', $desc ) ) {
 			$this->realExplanation = 'IDF Score';
 		}
 	}

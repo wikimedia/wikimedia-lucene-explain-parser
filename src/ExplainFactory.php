@@ -19,15 +19,6 @@ class ExplainFactory {
 		}
 	}
 
-	private function replaceBadJson( array $explJson ) {
-		return $explJson ?: [
-			'details' => [],
-			'description' => 'no explain for doc',
-			'value' => 0.0,
-			'match' => true,
-		];
-	}
-
 	/**
 	 * Create new Explain from JSON data.
 	 * @param array $explJson
@@ -36,9 +27,8 @@ class ExplainFactory {
 	public function createExplain( array $explJson ) {
 		$description = $explJson['description'];
 		$details = [];
-		$ignored = null;
 		$tieMatch = preg_match( '/max plus ([0-9.]+) times/', $description, $tieMatches );
-		$prefixMatch = preg_match( '/\:.*?\*(\^.+?)?, product of/', $description, $prefixMatches );
+		$prefixMatch = preg_match( '/\:.*?\*(\^.+?)?, product of/', $description );
 		if ( isset( $explJson['details'] ) ) {
 			$details = $explJson['details'];
 		}

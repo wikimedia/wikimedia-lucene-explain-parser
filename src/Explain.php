@@ -103,7 +103,7 @@ class Explain {
 	private $asRawStr;
 
 	public function __toString() {
-		return $this->toString( 0 );
+		return $this->toString();
 	}
 
 	/**
