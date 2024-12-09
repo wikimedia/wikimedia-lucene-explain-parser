@@ -1,4 +1,5 @@
 <?php
+
 namespace LuceneExplain;
 
 class MatchAllDocsExplain extends Explain {

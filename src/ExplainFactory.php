@@ -1,4 +1,5 @@
 <?php
+
 namespace LuceneExplain;
 
 class ExplainFactory {
@@ -27,18 +28,6 @@ class ExplainFactory {
 		];
 	}
 
-	public static function strStartsWith( $string, $startsWith ) {
-		return substr( $string, 0, strlen( $startsWith ) ) === $startsWith;
-	}
-
-	public static function strHasSubstr( $string, $subStr ) {
-		return strpos( $string, $subStr ) !== false;
-	}
-
-	public static function strEndsWith( $string, $endsWith ) {
-		return substr( $string, -strlen( $endsWith ) ) === $endsWith;
-	}
-
 	/**
 	 * Create new Explain from JSON data.
 	 * @param array $explJson
@@ -54,64 +43,64 @@ class ExplainFactory {
 			$details = $explJson['details'];
 		}
 
-		if ( self::strStartsWith( $description, 'score(' ) ) {
+		if ( str_starts_with( $description, 'score(' ) ) {
 			return new ScoreExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'tf(' ) ) {
+		} elseif ( str_starts_with( $description, 'tf(' ) ) {
 			return null; // new DefaultSimTfExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'idf(' ) ) {
+		} elseif ( str_starts_with( $description, 'idf(' ) ) {
 			return new DefaultSimIdfExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'fieldWeight' ) ) {
+		} elseif ( str_starts_with( $description, 'fieldWeight' ) ) {
 			return null; // new FieldWeightExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'queryWeight' ) ) {
+		} elseif ( str_starts_with( $description, 'queryWeight' ) ) {
 			return null; // new QueryWeightExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'ConstantScore' ) ) {
+		} elseif ( str_starts_with( $description, 'ConstantScore' ) ) {
 			return new ConstantScoreExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'MatchAllDocsQuery' ) ) {
+		} elseif ( str_starts_with( $description, 'MatchAllDocsQuery' ) ) {
 			return new MatchAllDocsExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'weight(' ) ) {
+		} elseif ( str_starts_with( $description, 'weight(' ) ) {
 			return new WeightExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'FunctionQuery' ) ) {
+		} elseif ( str_starts_with( $description, 'FunctionQuery' ) ) {
 			return new FunctionQueryExplain( $explJson, $this );
-		} elseif ( self::strStartsWith( $description, 'Function for field' ) ) {
+		} elseif ( str_starts_with( $description, 'Function for field' ) ) {
 			return new FieldFunctionQueryExplain( $explJson, $this );
 		} elseif ( $prefixMatch ) {
 			return new WeightExplain( $explJson, $this );
 		} elseif ( $explJson['value'] === 0.0 && (
-				self::strStartsWith( $description, 'match on required clause' ) ||
-				self::strStartsWith( $description, 'match filter' )
+				str_starts_with( $description, 'match on required clause' ) ||
+				str_starts_with( $description, 'match filter' )
 			) ) {
 			// Because ElasticSearch function queries filter when they apply
 			// boosts (this doesn't matter in scoring)
 			return null;
-		} elseif ( self::strStartsWith( $description, 'queryBoost' ) ) {
+		} elseif ( str_starts_with( $description, 'queryBoost' ) ) {
 			if ( $explJson['value'] === 1.0 ) {
 				// ElasticSearch function queries always add 'queryBoost' of 1,
 				// even when boost not specified
 				return null;
 			}
-		} elseif ( self::strStartsWith( $description, 'script score function, computed with script:' ) ) {
+		} elseif ( str_starts_with( $description, 'script score function, computed with script:' ) ) {
 			return new ScriptScoreFunctionExplain( $explJson, $this );
-		} elseif ( self::strHasSubstr( $description, 'constant score' ) &&
-			self::strHasSubstr( $description, 'no function provided' )
+		} elseif ( str_contains( $description, 'constant score' ) &&
+			str_contains( $description, 'no function provided' )
 		) {
 			return null;
 		} elseif ( $description === 'weight' ) {
 			return new FuncWeightExplain( $explJson, $this );
 		} elseif ( $tieMatch ) {
 			return new DismaxTieExplain( $explJson, $this, (float)$tieMatches[1] );
-		} elseif ( self::strHasSubstr( $description, 'max of' ) ) {
+		} elseif ( str_contains( $description, 'max of' ) ) {
 			return $this->meOrOnlyChild( new DismaxExplain( $explJson, $this ) );
-		} elseif ( self::strHasSubstr( $description, 'sum of' )
-				|| self::strHasSubstr( $description, 'score mode [sum]' ) ) {
+		} elseif ( str_contains( $description, 'sum of' )
+				|| str_contains( $description, 'score mode [sum]' ) ) {
 			return $this->meOrOnlyChild( new SumExplain( $explJson, $this ) );
-		} elseif ( self::strHasSubstr( $description, 'Math.min of' ) || $description === 'min of:' ) {
+		} elseif ( str_contains( $description, 'Math.min of' ) || $description === 'min of:' ) {
 			return $this->meOrOnlyChild( new MinExplain( $explJson, $this ) );
-		} elseif ( self::strHasSubstr( $description, 'score mode [multiply]' ) ) {
+		} elseif ( str_contains( $description, 'score mode [multiply]' ) ) {
 			return $this->meOrOnlyChild( new ProductExplain( $explJson, $this ) );
-		} elseif ( self::strHasSubstr( $description, 'product of' ) ) {
+		} elseif ( str_contains( $description, 'product of' ) ) {
 			if ( count( $details ) === 2 ) {
 				foreach ( $details as $detail ) {
-					if ( self::strStartsWith( $detail['description'], 'coord(' ) ) {
+					if ( str_starts_with( $detail['description'], 'coord(' ) ) {
 						return new CoordExplain( $explJson, $this, (float)$detail['value'] );
 					}
 				}
