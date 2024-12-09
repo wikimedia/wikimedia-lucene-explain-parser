@@ -5,8 +5,6 @@ namespace LuceneExplain;
 class ExplainPrinterTest extends \PHPUnit\Framework\TestCase {
 
 	public function formatProvider() {
-		$tests = [];
-
 		foreach ( glob( __DIR__ . "/fixtures/*.explain" ) as $explainFile ) {
 			$testBase = substr( $explainFile, 0, -8 );
 			$testName = basename( $testBase );
@@ -15,18 +13,14 @@ class ExplainPrinterTest extends \PHPUnit\Framework\TestCase {
 				$this->fail( "Failed parsing $explainFile: " . json_last_error() );
 			}
 
-			$tests[$testName] = [ $testBase, $explain ];
+			yield $testName => [ $testBase, $explain ];
 		}
-
-		return $tests;
 	}
 
 	/**
 	 * @dataProvider formatProvider
-	 * @param string $explainFile
-	 * @param array $explanation
 	 */
-	public function testFormat( $explainFile, $explanation ) {
+	public function testFormat( string $explainFile, array $explanation ) {
 		$factory = new ExplainFactory();
 		$explain = $factory->createExplain( $explanation );
 		$result = (string)$explain;
