@@ -1,4 +1,5 @@
 <?php
+
 namespace LuceneExplain;
 
 class FuncWeightExplain extends Explain {

@@ -1,4 +1,5 @@
 <?php
+
 namespace LuceneExplain;
 
 class CoordExplain extends Explain {
@@ -20,7 +21,7 @@ class CoordExplain extends Explain {
 		}
 		$infl = [];
 		foreach ( $this->children as $child ) {
-			if ( !ExplainFactory::strHasSubstr( $child->description, 'coord' ) ) {
+			if ( !str_contains( $child->description, 'coord' ) ) {
 				$infl[] = $child;
 			}
 		}

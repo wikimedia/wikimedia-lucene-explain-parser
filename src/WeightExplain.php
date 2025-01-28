@@ -1,4 +1,5 @@
 <?php
+
 namespace LuceneExplain;
 
 class WeightExplain extends Explain {
@@ -9,7 +10,7 @@ class WeightExplain extends Explain {
 			$this->realExplanation = $matches[1];
 		} else {
 			$productOf = ', product of:';
-			if ( ExplainFactory::strEndsWith( $explJson['description'], $productOf ) ) {
+			if ( str_ends_with( $explJson['description'], $productOf ) ) {
 				$this->realExplanation = substr( $explJson['description'], 0, -strlen( $productOf ) );
 			}
 		}
@@ -21,9 +22,9 @@ class WeightExplain extends Explain {
 
 	public function getMatch() {
 		/*
-		if ( ExplainFactory::strHasSubstr( $this->description, 'DefaultSimilarity' ) ) {
+		if ( str_contains( $this->description, 'DefaultSimilarity' ) ) {
 			return new DefaultSimilarityMatch( $this->children );
-		} elseif ( ExplainFactory::strHasSubstr( $this->description, 'PerFieldSimilarity' ) ) {
+		} elseif ( str_contains( $this->description, 'PerFieldSimilarity' ) ) {
 			// @TODO
 			return null;
 		}
