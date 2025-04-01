@@ -16,6 +16,9 @@ class DismaxExplain extends Explain {
 		return $this->scoreSort( $this->children );
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$infl = $this->influencers();
 		return reset( $infl )->vectorize();

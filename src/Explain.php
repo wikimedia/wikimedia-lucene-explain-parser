@@ -61,14 +61,23 @@ class Explain {
 		return [];
 	}
 
+	/**
+	 * @return float
+	 */
 	public function contribution() {
 		return $this->realContribution;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function explanation() {
 		return $this->realExplanation;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function hasMatch() {
 		return false;
 	}
@@ -121,6 +130,9 @@ class Explain {
 		return $this->asStr;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function toRawString() {
 		if ( $this->asRawStr === null ) {
 			$this->asRawStr = json_encode( $this->asJson );

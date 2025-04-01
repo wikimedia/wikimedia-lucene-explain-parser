@@ -16,6 +16,9 @@ class WeightExplain extends Explain {
 		}
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function hasMatch() {
 		return true;
 	}
@@ -35,6 +38,9 @@ class WeightExplain extends Explain {
 		return null;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function matchDetails() {
 		return [ $this->explanation() => $this->toRawString() ];
 	}

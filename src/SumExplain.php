@@ -27,6 +27,9 @@ class SumExplain extends Explain {
 		return $this->scoreSort( $infl );
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$rVal = VectorService::create();
 		foreach ( $this->influencers() as $infl ) {

@@ -16,6 +16,9 @@ class MinExplain extends Explain {
 		return $this->scoreSort( $this->children, 1 );
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$infl = $this->influencers();
 		$minInfl = $infl[0];

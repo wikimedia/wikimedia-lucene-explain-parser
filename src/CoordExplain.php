@@ -36,6 +36,9 @@ class CoordExplain extends Explain {
 		return $infl;
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		if ( $this->coordFactor >= 1.0 ) {
 			return parent::vectorize();

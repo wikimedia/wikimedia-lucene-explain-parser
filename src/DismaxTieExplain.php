@@ -25,6 +25,9 @@ class DismaxTieExplain extends Explain {
 		return $this->scoreSort( $this->children );
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$infl = $this->influencers();
 		$rVal = $infl[0]->vectorize();

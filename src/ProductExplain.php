@@ -16,6 +16,9 @@ class ProductExplain extends Explain {
 		return $this->scoreSort( $this->children );
 	}
 
+	/**
+	 * @return SparseVector
+	 */
 	public function vectorize() {
 		$rVal = VectorService::create();
 		$infl = $this->influencers();

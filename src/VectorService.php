@@ -7,6 +7,9 @@ namespace LuceneExplain;
  */
 class VectorService {
 
+	/**
+	 * @return SparseVector
+	 */
 	public static function create() {
 		return new SparseVector();
 	}
