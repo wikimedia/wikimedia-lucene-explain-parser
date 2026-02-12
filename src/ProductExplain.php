@@ -36,7 +36,6 @@ class ProductExplain extends Explain {
 		for ( $currInfl = 0; $currInfl < $numInfl; $currInfl++ ) {
 			$i = $infl[$currInfl];
 			$thisVec = $i->vectorize();
-			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$thisScaledByOthers = VectorService::scale( $thisVec, $inflFactors[$currInfl] );
 			$rVal = VectorService::add( $rVal, $thisScaledByOthers );
 		}
